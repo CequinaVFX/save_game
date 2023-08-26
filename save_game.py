@@ -4,7 +4,7 @@
 # version: 1.0.0
 # date: August 26 2023
 #
-# how to: ()
+# how to: (SaveGame().save_game())
 # dependencies: nuke, os.path, datetime.datetime
 #
 # license: MIT
@@ -16,7 +16,7 @@ from os import path
 from datetime import datetime
 from os import mkdir, path
 from shutil import copyfile
-print()
+
 class SaveGame():
     def __init__(self):
         forceSave = nuke.scriptSave()
@@ -27,7 +27,7 @@ class SaveGame():
         self.backupName = self._edit_filename(self.scriptName)
         self.save_DirPath = self._saveDirPath()
         copy = self.copy_file()
-        return(self.backupName, self.save_DirPath, copy)
+        return(copy)
 
     def _saveDirPath(self):
         savePath = '/'.join([self.dirPath, 'save_game'])
@@ -42,7 +42,6 @@ class SaveGame():
 
     def copy_file(self):
         _finalPath = '/'.join([self.save_DirPath, self.backupName])
-        print('copy... ', self.scriptPath, _finalPath)
         copy = copyfile(self.scriptPath, _finalPath)
         return(_finalPath)
 
@@ -57,3 +56,4 @@ def save_game():
 
 if __name__ == '__main__':
     save = save_game()
+    print('Game saved to {}'.format(save))
