@@ -51,9 +51,9 @@ def save_game():
         return()
     else:
         save = SaveGame().save_game()
+        print('Game saved to {}'.format(save))
         return(save)
         
 
 if __name__ == '__main__':
     save = save_game()
-    print('Game saved to {}'.format(save))
