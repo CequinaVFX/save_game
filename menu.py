@@ -1,7 +1,7 @@
 import nuke
 import save_game
 
-SHORTCUT = 'ctrl + alt + shift + s'
+SHORTCUT = 'ctrl+alt+shift+s'
 
 #Add a menu and assign a shortcut
 toolbar = nuke.menu('Nodes')
