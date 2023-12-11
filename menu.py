@@ -2,8 +2,9 @@ import nuke
 import save_game
 
 SHORTCUT = 'ctrl+alt+shift+s'
+ICON = 'save_game.png'
 
 #Add a menu and assign a shortcut
 toolbar = nuke.menu('Nodes')
-cqnTools = toolbar.addMenu('CQNTools', icon='Modify.png')
-cqnTools.addCommand('Save game', 'save_game.save_game()', SHORTCUT, icon='Sparkles.png')
+customTools = toolbar.addMenu('CQN Tools', icon='Modify.png')
+customTools.addCommand('Save game', 'save_game.SaveGame().save_game()', SHORTCUT, icon=ICON)
